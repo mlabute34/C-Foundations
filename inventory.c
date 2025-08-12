@@ -30,9 +30,10 @@ void inputItemDetails(int array_size, char item_names[][25], int item_quantities
     }
 }
 void printInventorySummary(int array_size, char item_names[][25], int item_quantities[]){
-    printf("Items Summary");
+    printf("Items Summary\n");
     for (int i = 0; i < array_size; i++){
         printf("Item name: %s, Amount: %d\n", item_names[i], item_quantities[i]);
 
     }
+
 }
