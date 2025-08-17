@@ -17,7 +17,7 @@ void addName(){
     FILE* fptr; 
     char name[50]; 
     printf("\nAdd a name: "); 
-    scanf("%s", name); 
+    scanf(" %[^\n]", name); // Read passed white spaces, stop at a new line 
     fptr = fopen("log.txt", "a");
     fprintf(fptr, "\n%s", name);
     fclose(fptr); 
