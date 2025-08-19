@@ -27,8 +27,10 @@ void viewNames(){
     FILE* fptr; 
     fptr = fopen("log.txt", "r"); 
     char readFile[1000];
+    int count; 
     while(fgets(readFile, 1000, fptr)){
-        printf("%s", readFile); 
+        printf("%d: %s", count, readFile); 
+        count++;
     } 
     fclose(fptr); 
 }
