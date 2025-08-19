@@ -8,6 +8,10 @@ void viewNames();
 // Main Menu (Use Main?)
 void mainMenu(); 
 
+struct Person{
+    char name[50];
+    int ID; 
+};
 
 int main(){
     mainMenu(); 
@@ -15,11 +19,13 @@ int main(){
 
 void addName(){
     FILE* fptr; 
-    char name[50]; 
+    struct Person person;  
     printf("\nAdd a name: "); 
-    scanf(" %[^\n]", name); // Read passed white spaces, stop at a new line 
+    scanf(" %[^\n]", person.name); // Read passed white spaces, stop at a new line 
+    printf("Add an ID: ");
+    scanf("%d", &person.ID); 
     fptr = fopen("log.txt", "a");
-    fprintf(fptr, "\n%s", name);
+    fprintf(fptr, "\n%d: %s", person.ID, person.name);
     fclose(fptr); 
 }
 
@@ -27,7 +33,7 @@ void viewNames(){
     FILE* fptr; 
     fptr = fopen("log.txt", "r"); 
     char readFile[1000];
-    int count; 
+    int count = 1; 
     while(fgets(readFile, 1000, fptr)){
         printf("%d: %s", count, readFile); 
         count++;
