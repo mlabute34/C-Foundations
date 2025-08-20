@@ -1,11 +1,8 @@
 #include <stdio.h>
 
 // Functions 
-// Add a name to file
 void addName();
-// View names from file 
 void viewNames(); 
-// Main Menu (Use Main?)
 void mainMenu(); 
 
 struct Person{
